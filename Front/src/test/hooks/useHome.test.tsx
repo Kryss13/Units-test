@@ -4,7 +4,7 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import useHome from "../../hooks/useHome";
 
 const server = setupServer(
-  rest.get("http://localhost:8000/api/home", (req, res, ctx) => {
+  rest.get("http://localhost:8000/api/products", (req, res, ctx) => {
     return res(
       ctx.json({
         products: [
@@ -53,7 +53,7 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test("load products", async () => {
+test("load Home", async () => {
   const { result } = renderHook(() => useHome());
   const { loading, loadProducts } = result.current;
   expect(loading).toEqual(true);
