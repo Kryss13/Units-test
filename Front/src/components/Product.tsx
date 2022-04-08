@@ -8,7 +8,7 @@ const Product = ({ setRoute, data: product }: any) => {
     <div>
       {loading && <div>Loading....</div>}
       {message && <p>{message}</p>}
-      <div onClick={() => setRoute({ route: "home" })}>Retour</div>
+      <div id="back" onClick={() => setRoute({ route: "home" })}>Retour</div>
       <div>
         <div>
           <img src={product.image} alt="" />
