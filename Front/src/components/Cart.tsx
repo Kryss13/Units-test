@@ -11,7 +11,7 @@ const Cart = ({ setRoute }: { setRoute: (data: any) => void }) => {
       <div>
         {products.map((product) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={product.id}>
               <div>
                 <img src={product.image} alt="" />
                 <p>Figurine de {product.name}</p>

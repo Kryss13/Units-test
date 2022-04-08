@@ -6,11 +6,11 @@ const Home = ({ setRoute }: { setRoute: (data: any) => void }) => {
   return (
     <div>
       {loading && <div>Loading....</div>}
-      <div onClick={() => setRoute({ route: "cart" })}>Aller sur panier</div>
+      <div id="goToCart" onClick={() => setRoute({ route: "cart" })}>Aller sur panier</div>
       <div>
         {products.map((product) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={product.id}>
               <div
                 onClick={() => setRoute({ route: "product", data: product })}
               >
