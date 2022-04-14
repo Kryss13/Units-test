@@ -1,4 +1,4 @@
-name: Cypress
+name: Cypress Tests
 
 on: [push]
 
@@ -7,11 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
       - name: Move to project root 🚀 && Install 🔨
-        run: |
-             cd Front
-             npm install
+        run: cd Front
+      - name: Setup npm package
+        run: npm init -y && npm install
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
