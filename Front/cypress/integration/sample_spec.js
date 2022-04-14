@@ -7,7 +7,7 @@ describe("Basket", () => {
       cy.get('#addBasket').click();
       cy.get('#back').click();
       cy.get('#goToCart').click();
-      cy.wait(5000) // wait for 10 seconds
+      cy.wait(5000) // wait for 5 seconds
       cy.get("#cartFigurine").contains("Figurine de Beth Smith");
       cy.get("#cartQuantity").contains("Quantitée 20");
     });
