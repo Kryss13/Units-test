@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup npm package
-        run: cd Front && npm init -y && npm install
+        run: |
+             cd Front
+             npm init -y 
+             npm install
       - name: Checkout
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
@@ -16,4 +19,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: cd Front && npm start
+          start: |
+             cd Front
+             npm start
