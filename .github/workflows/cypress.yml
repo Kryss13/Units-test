@@ -9,7 +9,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: Move to project root 🚀 && Install 🔨
-        run: cd Front
+        run: |
+             cd Front
              npm install
       - name: Cypress run
         uses: cypress-io/github-action@v2
