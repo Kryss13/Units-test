@@ -14,8 +14,8 @@ const Cart = ({ setRoute }: { setRoute: (data: any) => void }) => {
             <React.Fragment key={product.id}>
               <div>
                 <img src={product.image} alt="" />
-                <p>Figurine de {product.name}</p>
-                <p>Quantitée {product.quantity}</p>
+                <p id="cartFigurine">Figurine de {product.name}</p>
+                <p id="cartQuantity">Quantitée {product.quantity}</p>
               </div>
               <button onClick={() => removeToCart(product)}>
                 Supprimer du panier
