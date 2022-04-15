@@ -19,6 +19,8 @@ jobs:
       - name: Update dependencies in lock file
         run: |
           cd Back
+          docker-compose build
+          docker-compose up -d
           docker-compose exec -T app bash
           composer install
 
