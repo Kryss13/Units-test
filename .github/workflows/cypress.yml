@@ -11,7 +11,7 @@ jobs:
     steps:
           - name : run back
             run : |
-                cd Back
+                cd ../Back
                 docker-compose up -d
                 docker-compose -f docker-compose.yml
                 docker-compose exec -T app composer install
