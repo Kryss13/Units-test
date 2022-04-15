@@ -20,7 +20,7 @@ jobs:
         run: |
           cd Back
           docker-compose exec -T app bash
-          composer update
+          composer install
 
       # Runs a set of commands using the runners shell
       - name: Installation Docker
