@@ -44,15 +44,5 @@ jobs:
         run: |
           cd Back
           docker-compose exec -T app bash
-          composer test
-      - name: Upload Code Coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
-          flags: unit_tests
-          name: codecov-umbrella
-          fail_ci_if_error: true
-          verbose: true
-          
+          composer test      
         
