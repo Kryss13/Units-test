@@ -11,9 +11,6 @@ jobs:
           - name: Run blog test
             uses: cypress-io/github-action@v2
             with:
-              start: | 
-                cd Front
-                npm install
-                npm start
+              start: cd Front && npm start
               wait-on: 'http://localhost:3000'
               config: baseUrl=https://localhost:3000
