@@ -12,6 +12,6 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v1
             with:
-              start: npm start
+              start: npm start && npm cypress:open
               wait-on: 'http://localhost:3000'
               config: baseUrl=https://localhost:3000
