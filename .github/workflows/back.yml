@@ -14,4 +14,5 @@ jobs:
         cd Back
         docker-compose up -d
         docker-compose -f docker-compose.yml
+        docker-compose exec -T app composer install
         docker-compose exec -T app php bin/phpunit
