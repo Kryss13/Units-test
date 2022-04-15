@@ -7,11 +7,10 @@ defaults:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/included:3.8.3
     steps:
           - name: Checkout
-            uses: actions/checkout@v2
-          - name: Run blog test
-            uses: cypress-io/github-action@v2
+            uses: actions/checkout@v1
             with:
               start: npm start
               wait-on: 'http://localhost:3000'
