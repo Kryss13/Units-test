@@ -8,11 +8,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3
         - name: Run cypress test
           uses: cypress-io/github-action@v2
           with:
             start: npm start
             working-directory : Front
+            browser : chrome
+            headless : true
+            build : npx cypress info
             wait-on: 'http://localhost:3000'
             config: baseUrl=https://localhost:3000
