@@ -21,8 +21,7 @@ jobs:
           cd Back
           docker-compose build
           docker-compose up -d
-          docker-compose exec -T app bash
-          composer update --ignore-platform-reqs
+          docker-compose exec -T app composer install --ignore-platform-reqs
 
       # Runs a set of commands using the runners shell
       - name: Installation Docker
