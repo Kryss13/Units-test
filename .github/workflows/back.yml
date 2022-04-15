@@ -1,0 +1,21 @@
+name: Back CI
+
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name : Checkout 
+      uses: actions/checkout@v2
+    - name : Test 
+      run : |
+        cd Back
+        docker-compose up -d
+        docker-compose -f docker-compose.yml
+        docker-compose exec -T app composer install
+        docker-compose exec -T app php bin/console doctrine:database:drop --force --env=test
+        docker-compose exec -T app php bin/console doctrine:database:create --env=test
+        docker-compose exec -T app php bin/console doctrine:migrations:migrate -n --env=test
+        docker-compose exec -T app php bin/phpunit
