@@ -16,6 +16,8 @@ jobs:
         with:
           php-version: "7.4"
           coverage: xdebug
+      - name: Update dependencies in lock file
+        run: composer update
 
       # Runs a set of commands using the runners shell
       - name: Installation Docker
