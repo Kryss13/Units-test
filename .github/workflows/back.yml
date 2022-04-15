@@ -9,11 +9,8 @@ jobs:
     steps:
     - name : Checkout 
       uses: actions/checkout@v2
-    - name : php composer
-      uses: php-actions/composer@v5 # or alternative dependency management
-    - name : php unit
-      uses: php-actions/phpunit@v3
     - name : Test 
       run : |
         cd Back
-        php bin/phpunit
+        docker-compose up -d
+        docker-compose exec -T app php bin/phpunit
