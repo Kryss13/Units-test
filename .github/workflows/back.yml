@@ -35,7 +35,7 @@ jobs:
         run : |
           cd Back
           docker-compose exec -T app bash
-          composer update
+          composer update --ignore-platform-reqs
       - name: Migration env=test
         run: |
           cd Back
