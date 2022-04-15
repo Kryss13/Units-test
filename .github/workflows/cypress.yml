@@ -1,17 +1,17 @@
-name: Cypress Tests
-
+name: Blog tests
 on: [push]
 defaults:
     run:
         working-directory: Front
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
-    container: cypress/included:3.8.3
-    steps:
-          - name: Checkout
-            uses: actions/checkout@v1
-            with:
-              start: npm start && npm cypress:open
-              wait-on: 'http://localhost:3000'
-              config: baseUrl=https://localhost:3000
+    cypress-run:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Run blog test
+          uses: cypress-io/github-action@v2
+          with:
+            start: npm start
+            wait-on: 'http://localhost:3000'
+            config: baseUrl=https://localhost:3000
