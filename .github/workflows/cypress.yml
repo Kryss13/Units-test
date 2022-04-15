@@ -6,18 +6,13 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup npm package
-        run: |
-             npm init -y 
-             npm install
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: |
-             cd Front
-             npm start
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Run blog test
+            uses: cypress-io/github-action@v2
+            with:
+              start: | 
+                cd Front
+                npm start
+              wait-on: 'http://localhost:3000'
+              config: baseUrl=https://localhost:3000
