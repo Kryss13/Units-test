@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     container: cypress/included:3.8.3
     steps:
+          - name : run back
+            run : |
+                cd Back
+                docker-compose up -d
+                docker-compose -f docker-compose.yml
+                docker-compose exec -T app composer install
           - name: Checkout
             uses: actions/checkout@v1
             with:
