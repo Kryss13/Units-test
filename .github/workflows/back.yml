@@ -31,11 +31,6 @@ jobs:
           docker-compose up -d
       - name: Docker PS
         run: docker ps -a
-      - name: Install dependancie
-        run : |
-          cd Back
-          docker-compose exec -T app bash
-          composer update --ignore-platform-reqs
       - name: Migration env=test
         run: |
           cd Back
