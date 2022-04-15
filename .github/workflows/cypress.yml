@@ -13,6 +13,7 @@ jobs:
             with:
               start: | 
                 cd Front
+                npm install
                 npm start
               wait-on: 'http://localhost:3000'
               config: baseUrl=https://localhost:3000
