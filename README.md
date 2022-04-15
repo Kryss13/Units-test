@@ -5,6 +5,7 @@
 ![example workflow](https://github.com/Kryss13/Units-test/actions/workflows/cypress.yml/badge.svg)
 ![Back](https://github.com/Kryss13/Units-test/actions/workflows/back.yml/badge.svg)
 
+[![CI](https://github.com/sunnamed434/UIElementsUnturned/workflows/CI/badge.svg)](https://github.com/sunnamed434/UIElementsUnturned/actions/workflows/NET_Framework_CI.yml)
 
 ## Authors
 
