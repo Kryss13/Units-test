@@ -5,6 +5,9 @@
 [![Back](https://github.com/Kryss13/Units-test/actions/workflows/back.yml/badge.svg)](https://github.com/Kryss13/Units-test/actions/workflows/back.yml)
 [![Cypress tests](https://github.com/Kryss13/Units-test/actions/workflows/cypress.yml/badge.svg)](https://github.com/Kryss13/Units-test/actions/workflows/cypress.yml)
 
+
+[![codecov](https://codecov.io/gh/Kryss13/Units-test/branch/main/graph/badge.svg)](https://codecov.io/gh/Kryss13/Units-test)
+
 ## Authors
 
 * **Hecquet Christian** - *Software developer, mobile & iot* - [Linkedin](https://www.linkedin.com/in/christian-hecquet-978665178/)
